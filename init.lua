@@ -10,6 +10,17 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- if the completion engine supports the AI source
+-- use that instead of inline suggestions
+vim.g.ai_cmp = true
+local opt = vim.opt
+opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.cursorline = true -- Enable highlighting of the current line
+opt.expandtab = true -- Use spaces instead of tabs
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -147,6 +158,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'tpope/vim-fugitive',
+  'chrisbra/csv.vim',
   opts = {},
 
   -- NOTE: Plugins can also be added by using a table,
