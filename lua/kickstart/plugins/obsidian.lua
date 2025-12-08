@@ -18,7 +18,7 @@ return {
     workspaces = {
       {
         name = 'Vault',
-        path = '~/Documents/Obsidian Vault',
+        path = '~/Dropbox/markdown',
       },
     },
     completion = {
