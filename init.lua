@@ -260,14 +260,7 @@ require('lazy').setup({
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.obsidian',
 
-  --{ import = 'custom.plugins' },
-  require 'custom.plugins.harpoon',
-  require 'custom.plugins.oil',
-  require 'custom.plugins.render_markdown',
-  require 'custom.plugins.template',
-  require 'custom.plugins.todo',
-  require 'custom.plugins.ufo_conf',
-  require 'custom.plugins.noice_cmd',
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!

@@ -11,7 +11,14 @@ return {
     { 'j-hui/fidget.nvim', opts = {} },
 
     -- Allows extra capabilities provided by nvim-cmp
-    'hrsh7th/cmp-nvim-lsp',
+    { 'hrsh7th/nvim-cmp' }, -- Required
+    { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+    { 'L3MON4D3/LuaSnip' }, -- Required
+    { 'rafamadriz/friendly-snippets' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-cmdline' },
+    { 'saadparwaiz1/cmp_luasnip' },
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -117,8 +124,13 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     vim.lsp.config('apex_ls', {
-      apex_jar_path = vim.fn.stdpath 'data' .. '/mason/share/apex-language-server/apex-jorje-lsp.jar',
+      cmd = { 'java', '-jar', '/home/hasri/apex-jorje-lsp.jar' }, -- ADD THIS LINE!
+      apex_jar_path = '/home/hasri/apex-jorje-lsp.jar',
+      apex_enable_semantic_errors = true,
+      apex_enable_completion_statistics = false,
+      filetypes = { 'apex', 'apexcode', 'cls' },
     })
+    --vim.treesitter.language.register('apex', { 'apex', 'apexcode' })
     vim.lsp.enable 'apex_ls'
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -133,7 +145,7 @@ return {
       -- clangd = {},
       gopls = {},
       pyright = {},
-      rust_analyzer = {},
+      -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       ts_ls = {},
       --
