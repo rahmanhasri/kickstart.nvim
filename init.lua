@@ -31,7 +31,7 @@ vim.opt.number = true
 -- Make line numbers relative
 vim.opt.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
+--Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
@@ -260,8 +260,14 @@ require('lazy').setup({
   require 'kickstart.plugins.gitsigns',
   require 'kickstart.plugins.obsidian',
 
-  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }, -- FOLD
-  { import = 'custom.plugins' },
+  --{ import = 'custom.plugins' },
+  require 'custom.plugins.harpoon',
+  require 'custom.plugins.oil',
+  require 'custom.plugins.render_markdown',
+  require 'custom.plugins.template',
+  require 'custom.plugins.todo',
+  require 'custom.plugins.ufo_conf',
+  require 'custom.plugins.noice_cmd',
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
