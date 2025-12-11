@@ -1,5 +1,6 @@
 return {
-  'epwalsh/obsidian.nvim',
+  -- 'epwalsh/obsidian.nvim',
+  'obsidian-nvim/obsidian.nvim',
   version = '*', -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = 'markdown',
@@ -18,7 +19,7 @@ return {
     ui = { enable = false },
     workspaces = {
       {
-        name = 'Vault',
+        name = 'vault',
         path = '~/Dropbox/markdown',
       },
     },
@@ -27,6 +28,10 @@ return {
       min_chars = 2,
     },
     new_notes_location = 'current_dir',
-    disable_frontmatter = false,
+    -- disable_frontmatter = true,
+    frontmatter = {
+      enabled = false,
+    },
+    legacy_commands = false,
   },
 }
