@@ -261,6 +261,15 @@ require('lazy').setup({
   require 'kickstart.plugins.obsidian',
 
   { import = 'custom.plugins' },
+  {
+    'eoh-bse/minintro.nvim',
+    config = true,
+    lazy = false,
+  },
+  {
+    'numToStr/Comment.nvim',
+    opts = {},
+  },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
