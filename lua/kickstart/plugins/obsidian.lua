@@ -19,7 +19,7 @@ return {
     workspaces = {
       {
         name = 'Vault',
-        path = '~/Dropbox/markdown',
+        path = '~/markdownforlife',
       },
     },
     completion = {
@@ -27,6 +27,6 @@ return {
       min_chars = 2,
     },
     new_notes_location = 'current_dir',
-    disable_frontmatter = false,
+    disable_frontmatter = true,
   },
 }
