@@ -28,7 +28,7 @@ return {
       min_chars = 2,
     },
     new_notes_location = 'current_dir',
-    -- disable_frontmatter = true,
+    disable_frontmatter = true,
     frontmatter = {
       enabled = false,
     },
